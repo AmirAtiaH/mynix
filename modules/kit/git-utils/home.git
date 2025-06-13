@@ -1,0 +1,11 @@
+{ data, ... }:
+let
+  user = data.modulesOptions.kit.git-utils.name or {};
+  mail = data.modulesOptions.kit.git-utils.mail or {};
+in {
+  programs.git = {
+    enable = true;
+    userName = user;
+    userEmail = mail;
+  }
+}
