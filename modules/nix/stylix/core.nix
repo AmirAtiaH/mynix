@@ -1,6 +1,6 @@
 { data, pkgs, ... }:
 let
-  settings = data.modulesOptions.theme.stylix;
+  settings = data.modulesOptions.nix.stylix;
   theme = settings.theme or "gruvbox-dark-hard";
   mode = settings.mode or "dark";
   wallpaper = settings.wallpaper or "1.jpg";

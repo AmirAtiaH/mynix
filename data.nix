@@ -2,21 +2,21 @@
 [
   {
     useMods = [
-      "os.common"
-      # "os.kernel"
-      # "os.bluetooth"
-      # "os.networking"
-      # "os.pipewire"
-      "os.nvidia"
+      "sys.common"
+      # "sys.kernel"
+      # "sys.bluetooth"
+      # "sys.networking"
+      # "sys.pipewire"
+      "sys.nvidia"
 
       "nix.stylix"
       "nix.generator"
 
-      "ui.niri"
+      "wms.niri"
 
-      "cli.git-utils"
-      "cli.fish"
-      "cli.nushell"
+      "tui.git-utils"
+      "tui.fish"
+      "tui.nushell"
 
       "dev.postgre"
       "dev.dbeaver"
@@ -25,10 +25,10 @@
       "dev.vscode"
       "dev.c"
 
-      "apps.kitty"
-      "apps.vesktop"
-      "apps.dino"
-      "apps.telegram"
+      "gui.kitty"
+      "gui.vesktop"
+      "gui.dino"
+      "gui.telegram"
     ];
 
     # not moduled system pkgs
@@ -66,14 +66,20 @@
     };
 
     modulesOptions = {
-      kit.git-utils = {
+      tui.git-utils = {
         name = "AmirAtiaH";
         mail = "amir.gppume@gmail.com";
       };
-      theme.stylix = {
+      nix.stylix = {
         colorScheme = "gruvbox-dark-hard"
         mode = "dark";
         wallpaper = "1.jpg";
+      };
+      dev.vscode = {
+        extensions = with pkgs.vscode-extensions; [
+          ms-dotnettools.csdevkit
+          yzhang.markdown-all-in-one
+        ];
       };
     };
   }

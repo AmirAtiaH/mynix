@@ -55,5 +55,7 @@
       ])
       (command (lib.getExe pkgs.polkit_gnome))
     ];
+
+    screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";
   };
 }
