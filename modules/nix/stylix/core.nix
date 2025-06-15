@@ -9,7 +9,8 @@ in {
     inputs.stylix.nixosModules.stylix
   ];
   stylix.enable = true;
+  stylix.autoEnable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
-  stylix.image = ../../../assets/images/wallpaper/${wallpaper};
+  stylix.image = ../../../assets/images/wallpapers/${wallpaper};
   stylix.polarity = mode;
 }

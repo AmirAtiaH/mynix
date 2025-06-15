@@ -80,7 +80,7 @@
       nix.stylix = {
         colorScheme = "gruvbox-dark-hard";
         mode = "dark";
-        wallpaper = "1.jpg";
+        wallpaper = "2.jpg";
       };
       dev.vscode = {
         extensions = [

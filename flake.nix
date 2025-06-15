@@ -31,39 +31,48 @@
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs :
   let
+    funcs = import ./modules/common/funcs.nix;
     datas = import ./data.nix;
-    
-    scanModules = mods: file:
-      builtins.filter builtins.pathExists (
-        map (str:
-          ./modules + "/" +
-          (builtins.replaceStrings ["."] ["/"] str) +
-          "/" + file + ".nix"
-        ) mods
-      );
 
-    mkConfig =
+
+    mkCore =
       builtins.listToAttrs (
-        map ( data:
-          let 
-            coreModules = scanModules data.useMods "core";
-            homeModules = scanModules data.useMods "home";
-          in {
+        map ( data: {
             name = (data.host or {}).name or "nixos";
             value = nixpkgs.lib.nixosSystem {
               system = data.system;
               modules = [
-                ./hardware/${(data.host or {}).name or "nixos"}.nix
-                ./modules/common
-              ] ++ coreModules;
+                ./hardware/${data.host.name or "nixos"}.nix
+                ./modules/common/nixos.nix
+              ];
               specialArgs = {
-                inherit inputs data homeModules;
+                inherit inputs data funcs;
               };
             };
           }
         ) datas
       );
+
+
+    mkHome =
+      builtins.listToAttrs (
+        map (data: {
+          name = "${data.host.name}.${data.user.name}";
+          value = home-manager.lib.homeManagerConfiguration {
+            pkgs = nixpkgs.legacyPackages.${data.system};
+            useGlobalPkgs = true;
+            useUserPkgs = true;
+            extraSpecialArgs = {
+              inherit inputs data funcs;
+            };
+            modules = [
+              ./modules/common/home-manager.nix
+            ];
+          };
+        }) datas
+      );
   in {
-    nixosConfigurations = mkConfig;
+    nixosConfigurations = mkCore;
+    homeConfigurations = mkHome;
   };
 }
