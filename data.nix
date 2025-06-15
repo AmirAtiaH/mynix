@@ -84,8 +84,8 @@
       };
       dev.vscode = {
         extensions = [
-          "ms-dotnettools.csdevkit"
-          "yzhang.markdown-all-in-one"
+          ["ms-dotnettools" "csdevkit"]
+          ["yzhang" "markdown-all-in-one"]
         ];
       };
     };

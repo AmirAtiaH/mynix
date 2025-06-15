@@ -1,7 +1,6 @@
 {
   lib,
   pkgs,
-  config,
   ...
 }:
 {
@@ -24,7 +23,10 @@
 
     input = {
       keyboard = {
-        xkb.layout = "us,ara";
+        xkb = {
+          layout = "us,ara";
+          options = "grp:win_space_toggle";
+        };
         #numlock = true;
       };
       power-key-handling.enable = true;
@@ -51,7 +53,7 @@
       focus-ring = {
         enable = true;
         width = 6;
-        active = "rgb(127 200 255)";
+        #active.color = "rgb(127 200 255)";
       };
     };
 
@@ -72,5 +74,6 @@
     ];
 
     screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";
+    prefer-no-csd = true;
   };
 }

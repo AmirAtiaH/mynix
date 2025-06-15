@@ -6,10 +6,11 @@
 }:
 let
   # extra packages
-  extensions = funcs.stringsToPkgs "" data.modulesOptions.dev.vscode.extensions or [];
+  # programs.vscode.
+  extensions = funcs.stringsToPkgs pkgs.vscode-extensions (data.modulesOptions.dev.vscode.extensions or []);
 in {
   programs.vscode = {
     enable = true;
-    extensions = extensions;
+    profiles.default.extensions = extensions;
   };
 }

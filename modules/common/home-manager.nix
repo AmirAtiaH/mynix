@@ -1,6 +1,7 @@
 { 
   data,
   funcs,
+  pkgs,
   ...
 }:
 let
@@ -11,10 +12,10 @@ let
   homeModules = funcs.scanModules data.useMods "home";
 
   # extra modules
-  extraHomeMods = funcs.stringsToPkgs "" (data.extraHomeMods or []);
+  extraHomeMods = funcs.stringsToPkgs pkgs (data.extraHomeMods or []);
 
   # extra packages
-  extraHomePkgs = funcs.stringsToPkgs "" (data.extraHomePkgs or []);
+  extraHomePkgs = funcs.stringsToPkgs pkgs (data.extraHomePkgs or []);
 in {
   imports = homeModules ++ extraHomeMods;
 
@@ -26,7 +27,7 @@ in {
 
   # allow unfree packages and use extra packages
   nixpkgs.config.allowUnfree = true;
-  home.Packages = extraHomePkgs;
+  home.packages = extraHomePkgs;
 
   # enable home manager
   programs.home-manager.enable = true;

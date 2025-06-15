@@ -6,7 +6,7 @@
         ../${(builtins.replaceStrings ["."] ["/"] str)}/${file}.nix
       ) mods
     );
-  
-  stringsToPkgs = place: names:
-    map(name: pkgs.${place + name}) names;
+    
+  stringsToPkgs = place: paths:
+    map (path: builtins.foldl' (s: key: s.${key}) place path) paths;
 }

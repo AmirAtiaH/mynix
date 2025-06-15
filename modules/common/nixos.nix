@@ -11,10 +11,10 @@ let
   coreModules = funcs.scanModules data.useMods "core";
 
   # extra modules
-  extraCoreMods = funcs.stringsToPkgs "" (data.extraCoreMods or []);
+  extraCoreMods = funcs.stringsToPkgs pkgs (data.extraCoreMods or []);
 
   # extra packages
-  extraCorePkgs = funcs.stringsToPkgs "" (data.extraCorePkgs or []);
+  extraCorePkgs = funcs.stringsToPkgs pkgs (data.extraCorePkgs or []);
 
 in {
   # common used and extra modules
