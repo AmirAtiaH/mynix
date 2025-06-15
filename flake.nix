@@ -31,13 +31,15 @@
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs :
   let
-    funcs = import ./modules/common/funcs.nix;
     datas = import ./data.nix;
 
 
     mkCore =
       builtins.listToAttrs (
-        map ( data: {
+        map ( data:
+        let
+          pkgs = nixpkgs.legacyPackages.${data.system};
+        in {
             name = (data.host or {}).name or "nixos";
             value = nixpkgs.lib.nixosSystem {
               system = data.system;
@@ -46,7 +48,8 @@
                 ./modules/common/nixos.nix
               ];
               specialArgs = {
-                inherit inputs data funcs;
+                inherit inputs data;
+                funcs = import ./modules/common/funcs.nix  { inherit pkgs; };
               };
             };
           }
@@ -56,14 +59,16 @@
 
     mkHome =
       builtins.listToAttrs (
-        map (data: {
-          name = "${data.host.name}.${data.user.name}";
+        map (data:
+        let
+          pkgs = nixpkgs.legacyPackages.${data.system};
+        in {
+          name = "${data.user.name}";
           value = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.${data.system};
-            useGlobalPkgs = true;
-            useUserPkgs = true;
+            pkgs = pkgs;
             extraSpecialArgs = {
-              inherit inputs data funcs;
+              inherit inputs data;
+              funcs = import ./modules/common/funcs.nix { inherit pkgs; };
             };
             modules = [
               ./modules/common/home-manager.nix

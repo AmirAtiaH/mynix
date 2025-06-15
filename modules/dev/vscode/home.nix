@@ -1,6 +1,7 @@
 {
   pkgs,
   funcs,
+  data,
   ...
 }:
 let

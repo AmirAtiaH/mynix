@@ -1,20 +1,20 @@
 {
   data,
   pkgs,
-  func,
+  funcs,
   ...
 }:
 let
   stateVersion = data.host.vrsn or "25.05";
   
   # default modules
-  coreModules = func.scanModules data.useMods "core";
+  coreModules = funcs.scanModules data.useMods "core";
 
   # extra modules
-  extraCoreMods = func.stringsToPkgs "" (data.extraCoreMods or []);
+  extraCoreMods = funcs.stringsToPkgs "" (data.extraCoreMods or []);
 
   # extra packages
-  extraCorePkgs = func.stringsToPkgs "" (data.extraCorePkgs or []);
+  extraCorePkgs = funcs.stringsToPkgs "" (data.extraCorePkgs or []);
 
 in {
   # common used and extra modules
@@ -29,7 +29,7 @@ in {
   # extra packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = extraCorePkgs ++ [
-    home-manager
+    pkgs.home-manager
   ];
 
   system.stateVersion = stateVersion;

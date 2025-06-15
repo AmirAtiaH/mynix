@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   scanModules = mods: file: 
     builtins.filter builtins.pathExists (
       map (str:
@@ -8,5 +8,5 @@
     );
   
   stringsToPkgs = place: names:
-    map(name: pkgs.${place}${name}) names;
+    map(name: pkgs.${place + name}) names;
 }

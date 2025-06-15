@@ -9,5 +9,6 @@
     libsecret
     xwayland-satellite
     mako
+    brightnessctl
   ];
 }

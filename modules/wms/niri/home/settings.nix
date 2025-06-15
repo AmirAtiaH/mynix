@@ -1,4 +1,10 @@
-{ inputs, lib, pkgs, config, ... }: {
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
+{
   programs.niri.settings = {
     environment = {
       CLUTTER_BACKEND = "wayland";
@@ -14,6 +20,8 @@
       TERMINAL = "kitty";
       XMODIFIERS = "@im=fcitx";
     };
+
+
     input = {
       keyboard = {
         xkb.layout = "us,ara";
@@ -26,14 +34,25 @@
         max-scroll-amount = "0%";
       };
     };
+
+
     layout = {
       gaps = 16;
       border.width = 5;
       always-center-single-column = true;
       empty-workspace-above-first = true;
-      default-column-width.proportion = 0.33333;
-      focus-ring.enable = true;
-      focus-ring.width = 7;
+      default-column-width.proportion = 1. / 3.;
+      preset-column-widths = [
+        { proportion = 1. / 3.; }
+        { proportion = 1. / 2.; }
+        { proportion = 2. / 3.; }
+        # { fixed = 1920; }
+      ];
+      focus-ring = {
+        enable = true;
+        width = 6;
+        active = "rgb(127 200 255)";
+      };
     };
 
 
