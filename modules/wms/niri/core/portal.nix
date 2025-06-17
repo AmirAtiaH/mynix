@@ -1,18 +1,18 @@
 { config, lib, pkgs, ... }:{
-  services.xserver.enable = false;
-
-  programs.niri.enable = true;
-
   environment.systemPackages = with pkgs; [
     waybar
   ];
-
-  services.xdg.portal = {
+  
+  xdg.portal = {
     enable = true;
+    xdgOpenUsePortal = true;
     wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-wlr
+    ];
   };
-
   security.polkit.enable = true;
   services.dbus.enable = true;
 }

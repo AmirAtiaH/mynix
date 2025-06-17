@@ -8,5 +8,5 @@ in {
     enable = true;
     userName = user;
     userEmail = mail;
-  }
+  };
 }
