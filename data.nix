@@ -15,12 +15,11 @@
 
       "tui.git-utils"
       "tui.fish"
-      #"tui.nushell"
+      "tui.nushell"
 
       "dev.postgre"
       "dev.dbeaver"
       "dev.dotnet"
-      # "dev.nixvim"
       "dev.vscode"
       "dev.c"
 
@@ -30,22 +29,28 @@
       "gui.dino"
       "gui.telegram"
 
-
-      # working on
       "fun.steam"
       "fun.gamemode"
-      #"tui.starship"
-      #"nix.generator"
+
+      # working on
+      "dev.nixvim"
+      # "tui.fastfetch"
+      # "gui.element"
+      "tui.starship"
+      # "nix.generator"
     ];
 
     # not moduled system pkgs
     extraCorePkgs = [
       # "hyprland"
+      ["fastfetch"]
+      ["ghostty"]
     ];
 
     # not moduled user pkgs
     extraHomePkgs = [
       # "discord"
+      ["element-desktop"]
     ];
 
     # extra nixos modules
@@ -61,6 +66,7 @@
     system = "x86_64-linux";
     timeZone = "Africa/Cairo";
     language = "en_US.UTF-8";
+    shell = ["nushell"];
 
     host = {
       name = "pixel";
@@ -72,7 +78,7 @@
       info = "AmirAttia";
     };
 
-    modulesOptions = {
+    options = {
       tui.git-utils = {
         name = "AmirAtiaH";
         mail = "amir.gppume@gmail.com";

@@ -1,4 +1,6 @@
 { pkgs, ... }:
 {
-  programs.nushell.enable = true;
+  environment.systemPackages = [
+    pkgs.nushell
+  ];
 }

@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  inputs,
   ...
 }:
 {
@@ -39,8 +40,8 @@
 
 
     layout = {
-      gaps = 16;
-      border.width = 5;
+      gaps = 10;
+      border.width = 3;
       always-center-single-column = true;
       empty-workspace-above-first = true;
       default-column-width.proportion = 1. / 3.;
@@ -52,7 +53,7 @@
       ];
       focus-ring = {
         enable = true;
-        width = 6;
+        width = 3;
         #active.color = "rgb(127 200 255)";
       };
     };
@@ -71,6 +72,11 @@
         "20000"
       ])
       (command (lib.getExe pkgs.polkit_gnome))
+      /*(command
+        [(lib.getExe pkgs.swaybg)
+        "-i"
+        (inputs.stylix.image)
+      ])*/
     ];
 
     screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";

@@ -7,6 +7,9 @@
       ) mods
     );
     
+  stringsToPkg = place: path:
+    builtins.foldl' (s: key: s.${key}) place path;
+    
   stringsToPkgs = place: paths:
     map (path: builtins.foldl' (s: key: s.${key}) place path) paths;
 }

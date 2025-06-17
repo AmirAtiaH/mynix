@@ -1,6 +1,6 @@
 { data, ... }:
 let
-  settings = data.modulesOptions.tui.git-utils or {};
+  settings = data.options.tui.git-utils or {};
   user = settings.name or {};
   mail = settings.mail or {};
 in {

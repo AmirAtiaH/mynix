@@ -1,4 +1,8 @@
-{ ... }: {
+{ inputs, ... }: {
+  imports = [
+    inputs.nixvim.nixosModules.nixvim
+  ];
+
   programs.nixvim  = {
     enable = true;
     opts = {
@@ -9,7 +13,7 @@
     plugins = {
       lualine.enable = true;
       telescope.enable = true;
-      web-devicons.eable = true;
+      #web-devicons.eable = true;
       lsp = {
         enable = true;
         servers = {

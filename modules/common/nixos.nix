@@ -19,10 +19,11 @@ let
 in {
   # common used and extra modules
   imports = [
+    ./core/boot-loader.nix
     ./core/time-zone.nix
     ./core/the-user.nix
     ./core/locale.nix
-    ./core/boot-loader.nix
+    ./core/shell.nix
   ] ++ extraCoreMods
     ++ coreModules;
 
