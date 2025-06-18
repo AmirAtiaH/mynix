@@ -12,9 +12,5 @@
       #background_opacity = "0.5";
       #background_blur = 10;
     };
-    font = {
-      name = "JetBrainsMono Nerd Font Propo";
-      size = 12;
-    };
   };
 }

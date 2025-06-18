@@ -14,5 +14,21 @@ in {
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${colorScheme}.yaml";
     image = ../../../assets/images/wallpapers/${wallpaper};
     polarity = mode;
+
+    fonts = {
+      sizes.terminal = 12;
+      monospace = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+      };
+      /*serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
+      sansSerif = {
+        package = pkgs.ubuntu-sans;
+        name = "Ubuntu Sans";
+      };*/
+    };
   };
 }

@@ -17,5 +17,6 @@
     swaybg
     swaylock
     fuzzel
+    nautilus
   ];
 }

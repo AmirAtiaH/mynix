@@ -68,7 +68,7 @@ in {
     in
     [
       (command (lib.getExe pkgs.xwayland-satellite))
-      (command (lib.getExe pkgs.waybar))
+      #(command (lib.getExe pkgs.waybar))
       (command [
         (lib.getExe pkgs.mako)
         "--default-timeout"
@@ -78,8 +78,7 @@ in {
         [(lib.getExe pkgs.swaybg)
         "-i"
         ((toString ../../../../assets/images/wallpapers/${wallpaper}))
-        "-m"
-        "fill"
+        "-m" "fill"
       ])
     ];
 
