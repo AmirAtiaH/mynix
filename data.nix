@@ -28,7 +28,7 @@
       "gui.zen"
       "gui.kitty"
       "gui.mpv"
-      "kit.nautilus"
+      "gui.oculante"
 
       "fun.steam"
       "fun.gamemode"
@@ -42,7 +42,6 @@
 
     # not moduled system pkgs
     extraCorePkgs = [
-      # ["hyprland"]
       ["fastfetch"]
       ["ghostty"]
     ];
