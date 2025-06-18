@@ -12,7 +12,10 @@
       "nix.stylix"
 
       "wms.niri"
-      "gui.waybar"
+      "kit.waybar"
+      "kit.kitty"
+      "kit.mpv"
+      "kit.nautilus"
 
       "tui.git-utils"
       "tui.fish"
@@ -24,7 +27,6 @@
       "dev.vscode"
       "dev.c"
 
-      "gui.kitty"
       "gui.zen"
       "gui.vesktop"
       "gui.dino"
@@ -39,18 +41,19 @@
       # "gui.element"
       "tui.starship"
       # "nix.generator"
+      # "tui.yazi"
     ];
 
     # not moduled system pkgs
     extraCorePkgs = [
-      # "hyprland"
+      # ["hyprland"]
       ["fastfetch"]
       ["ghostty"]
     ];
 
     # not moduled user pkgs
     extraHomePkgs = [
-      # "discord"
+      # ["discord"]
       ["element-desktop"]
     ];
 
