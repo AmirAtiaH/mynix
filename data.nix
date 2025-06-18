@@ -16,6 +16,7 @@
       "kit.kitty"
       "kit.mpv"
       "kit.nautilus"
+      "kit.oculante"
 
       "tui.git-utils"
       "tui.fish"
