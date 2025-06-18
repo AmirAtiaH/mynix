@@ -12,6 +12,7 @@
       "nix.stylix"
 
       "wms.niri"
+      "gui.waybar"
 
       "tui.git-utils"
       "tui.fish"
@@ -66,7 +67,7 @@
     system = "x86_64-linux";
     timeZone = "Africa/Cairo";
     language = "en_US.UTF-8";
-    shell = ["nushell"];
+    shell = ["fish"];
 
     host = {
       name = "pixel";
@@ -77,16 +78,16 @@
       name = "ameer";
       info = "AmirAttia";
     };
-
+    
     options = {
       tui.git-utils = {
         name = "AmirAtiaH";
         mail = "amir.gppume@gmail.com";
       };
       nix.stylix = {
-        colorScheme = "gruvbox-dark-hard";
+        colorScheme = "tokyo-night-dark";
         mode = "dark";
-        wallpaper = "2.jpg";
+        wallpaper = "1.jpg";
       };
       dev.vscode = {
         extensions = [

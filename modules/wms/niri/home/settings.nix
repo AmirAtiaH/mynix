@@ -2,9 +2,13 @@
   lib,
   pkgs,
   inputs,
+  data,
   ...
 }:
-{
+let
+  settings = data.options.nix.stylix;
+  wallpaper = settings.wallpaper or "1.jpg";
+in {
   programs.niri.settings = {
     environment = {
       CLUTTER_BACKEND = "wayland";
@@ -54,7 +58,6 @@
       focus-ring = {
         enable = true;
         width = 3;
-        #active.color = "rgb(127 200 255)";
       };
     };
 
@@ -71,12 +74,13 @@
         "--default-timeout"
         "20000"
       ])
-      (command (lib.getExe pkgs.polkit_gnome))
-      /*(command
+      (command
         [(lib.getExe pkgs.swaybg)
         "-i"
-        (inputs.stylix.image)
-      ])*/
+        ((toString ../../../../assets/images/wallpapers/${wallpaper}))
+        "-m"
+        "fill"
+      ])
     ];
 
     screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";

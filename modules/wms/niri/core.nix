@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }: {
   imports = [
     #./core/keyring.nix
-    ./core/portal.nix
+    #./core/portal.nix
   ];
   programs.niri.enable = true;
   nixpkgs.overlays = [inputs.niri.overlays.niri];
