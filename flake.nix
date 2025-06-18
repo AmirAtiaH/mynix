@@ -18,6 +18,11 @@
       url = "github:sodiboo/niri-flake";
     };
 
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixvim = {
       url = "github:nix-community/nixvim/nixos-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -55,8 +60,6 @@
           }
         ) datas
       );
-
-
     mkHome =
       builtins.listToAttrs (
         map (data:

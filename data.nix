@@ -12,11 +12,7 @@
       "nix.stylix"
 
       "wms.niri"
-      "kit.waybar"
-      "kit.kitty"
-      "kit.mpv"
-      "kit.nautilus"
-      "kit.oculante"
+      "wms.waybar"
 
       "tui.git-utils"
       "tui.fish"
@@ -27,20 +23,19 @@
       "dev.dotnet"
       "dev.vscode"
       "dev.c"
+      "dev.nixvim"
 
       "gui.zen"
-      "gui.vesktop"
-      "gui.dino"
-      "gui.telegram"
+      "gui.kitty"
+      "gui.mpv"
+      "kit.nautilus"
 
       "fun.steam"
       "fun.gamemode"
 
       # working on
-      "dev.nixvim"
       # "tui.fastfetch"
-      # "gui.element"
-      "tui.starship"
+      # "tui.starship"
       # "nix.generator"
       # "tui.yazi"
     ];
@@ -54,8 +49,10 @@
 
     # not moduled user pkgs
     extraHomePkgs = [
-      # ["discord"]
       ["element-desktop"]
+      ["dino"]
+      ["telegram-desktop"]
+      ["vesktop"]
     ];
 
     # extra nixos modules
