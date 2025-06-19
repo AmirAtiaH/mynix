@@ -6,7 +6,7 @@ let
   wallpaper = settings.wallpaper or "1.jpg";
 in {
   imports = [
-    inputs.stylix.nixosModules.stylix
+    inputs.stylix.homeModules.stylix
   ];
   stylix = {
     enable = true;
@@ -21,14 +21,18 @@ in {
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font";
       };
-      /*serif = {
-        package = pkgs.dejavu_fonts;
-        name = "DejaVu Serif";
-      };
-      sansSerif = {
-        package = pkgs.ubuntu-sans;
-        name = "Ubuntu Sans";
-      };*/
+    };
+    /*iconTheme = {
+      enable = true;
+      package = pkgs.papirus-icon-theme;
+      light = "Papirus-Light";
+      dark = "Papirus-Dark";
+    };*/
+    iconTheme = {
+      enable = true;
+      package = pkgs.material-symbols;
+      light = "Material Symbols Light";
+      dark = "Material Symbols Dark";
     };
   };
 }

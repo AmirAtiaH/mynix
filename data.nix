@@ -12,7 +12,8 @@
       "nix.stylix"
 
       "wms.niri"
-      "wms.waybar"
+      "wms.quickshell"
+      # "wms.waybar"
 
       "tui.git-utils"
       "tui.fish"
@@ -37,7 +38,6 @@
       # "tui.fastfetch"
       # "tui.starship"
       # "nix.generator"
-      # "tui.yazi"
     ];
 
     # not moduled system pkgs

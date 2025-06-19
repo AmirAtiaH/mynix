@@ -45,7 +45,6 @@ in {
 
     layout = {
       gaps = 10;
-      border.width = 3;
       always-center-single-column = true;
       empty-workspace-above-first = true;
       default-column-width.proportion = 1. / 3.;
@@ -56,8 +55,11 @@ in {
         # { fixed = 1920; }
       ];
       focus-ring = {
+        enable = false;
+      };
+      border = {
         enable = true;
-        width = 3;
+        width = 2;
       };
     };
 
