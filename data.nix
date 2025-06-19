@@ -7,13 +7,13 @@
       # "sys.bluetooth"
       # "sys.networking"
       # "sys.pipewire"
-      "sys.nvidia"
+      # "sys.nvidia"
 
       "nix.stylix"
 
       "wms.niri"
-      "wms.quickshell"
-      # "wms.waybar"
+      # "wms.quickshell"
+      "wms.waybar"
 
       "tui.git-utils"
       "tui.fish"
