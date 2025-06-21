@@ -7,13 +7,13 @@
       # "sys.bluetooth"
       # "sys.networking"
       # "sys.pipewire"
-      # "sys.nvidia"
+      "sys.nvidia"
 
       "nix.stylix"
 
       "wms.niri"
-      # "wms.quickshell"
-      "wms.waybar"
+      "wms.quickshell"
+      # "wms.waybar"
 
       "tui.git-utils"
       "tui.fish"
@@ -85,13 +85,14 @@
         mail = "amir.gppume@gmail.com";
       };
       nix.stylix = {
-        colorScheme = "tokyo-night-dark";
+        colorScheme = "material-darker";
         mode = "dark";
         wallpaper = "1.jpg";
       };
       dev.vscode = {
         extensions = [
           ["ms-dotnettools" "csdevkit"]
+          ["jnoortheen" "nix-ide"]
           ["yzhang" "markdown-all-in-one"]
         ];
       };

@@ -5,12 +5,17 @@
   ...
 }:
 let
-  # extra packages
-  # programs.vscode.
-  extensions = funcs.stringsToPkgs pkgs.vscode-extensions (data.options.dev.vscode.extensions or []);
+  extensions-pkgs = funcs.stringsToPkgs pkgs.vscode-extensions (data.options.dev.vscode.extensions or []);
 in {
   programs.vscode = {
     enable = true;
-    profiles.default.extensions = extensions;
+    profiles.default = {
+      enableExtensionUpdateCheck = true;
+      extensions = extensions-pkgs;
+      userSettings = {
+        "files.autoSave" = "afterDelay";
+        "[nix]"."editor.tabSize" = 2;
+      };
+    };
   };
 }
