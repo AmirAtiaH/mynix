@@ -1,13 +1,13 @@
 [
   {
     useMods = [
-      # done
       "sys.common"
       # "sys.kernel"
       # "sys.bluetooth"
       # "sys.networking"
       # "sys.pipewire"
       "sys.nvidia"
+      "sys.flatpak"
 
       "nix.stylix"
 
@@ -40,13 +40,13 @@
       # "nix.generator"
     ];
 
-    # not moduled system pkgs
     extraCorePkgs = [
       ["fastfetch"]
       ["ghostty"]
+      ["btop"]
+      ["sysprof"]
     ];
 
-    # not moduled user pkgs
     extraHomePkgs = [
       ["element-desktop"]
       ["dino"]
