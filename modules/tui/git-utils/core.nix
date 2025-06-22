@@ -4,5 +4,6 @@
     curl
     gh
     wget
+    gnumake
   ];
 }
