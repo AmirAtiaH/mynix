@@ -12,12 +12,12 @@
       "nix.stylix"
 
       "wms.niri"
-      "wms.quickshell"
+      #"wms.quickshell"
       # "wms.waybar"
 
       "tui.git-utils"
       "tui.fish"
-      "tui.nushell"
+      #"tui.nushell"
 
       "dev.postgre"
       "dev.dbeaver"
@@ -42,9 +42,9 @@
 
     extraCorePkgs = [
       ["fastfetch"]
+      ["zed-editor"]
       ["ghostty"]
       ["btop"]
-      ["sysprof"]
     ];
 
     extraHomePkgs = [
