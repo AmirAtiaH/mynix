@@ -88,7 +88,7 @@
       nix.stylix = {
         colorScheme = "material-darker";
         mode = "dark";
-        wallpaper = "1.jpg";
+        wallpaper = "27.jpg";
       };
       dev.vscode = {
         extensions = [

@@ -16,7 +16,7 @@ in {
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/${colorScheme}.yaml";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/${colorScheme}.yaml";
     image = ../../../assets/images/wallpapers/${wallpaper};
     polarity = mode;
     fonts = {
