@@ -25,6 +25,10 @@ in {
     stateVersion = stateVersion;
   };
 
+  home.sessionVariables = {
+    PATH = "$PATH:/home/${name}/v";
+  };
+  
   # allow unfree packages and use extra packages
   nixpkgs.config.allowUnfree = true;
   home.packages = extraHomePkgs;

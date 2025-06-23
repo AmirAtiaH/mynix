@@ -16,7 +16,7 @@ in {
         sudo nixos-rebuild switch --flake .#${host}
       '';
       nix-update = ''
-        sudo nix flake update .
+        nix flake update
         nix-switch
       '';
     };

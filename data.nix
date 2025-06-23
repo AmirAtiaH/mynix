@@ -8,6 +8,7 @@
       # "sys.pipewire"
       "sys.nvidia"
       "sys.flatpak"
+      "sys.nix-ld"
 
       "nix.stylix"
 
