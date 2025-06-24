@@ -3,6 +3,7 @@
     enable = true;
     libraries = with pkgs; [
       glibc
+      glibc.dev
     ];
   };
 }

@@ -46,6 +46,7 @@
       ["zed-editor"]
       ["ghostty"]
       ["btop"]
+      ["ventoy-full-gtk"]
     ];
 
     extraHomePkgs = [
@@ -88,7 +89,7 @@
       nix.stylix = {
         colorScheme = "material-darker";
         mode = "dark";
-        wallpaper = "27.jpg";
+        wallpaper = "32.jpg";
       };
       dev.vscode = {
         extensions = [
